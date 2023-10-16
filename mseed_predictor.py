@@ -1030,7 +1030,7 @@ def mseed_predictor_two(input_dir='downloads_mseeds',
             prob_memory=[]
             for ix in range(len(predP)):
                 Ppicks, Pprob =  _picker(args, predP[ix,:, 0])   
-                Spicks, Sprob =  _picker(args, predS[ix,:, 0]) 
+                Spicks, Sprob =  _picker(args, predS[ix,:, 0], 'S_threshold')
                 #print(np.shape(Ppicks))
                 detection_memory,prob_memory=_output_writter_prediction(meta, csvPr_gen, Ppicks, Pprob, Spicks, Sprob, detection_memory,prob_memory,predict_writer, ix,len(predP),len(predS))
         
